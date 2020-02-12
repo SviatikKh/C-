@@ -1,0 +1,60 @@
+//---------------------------------------------------------------------------
+
+#ifndef Unit1H
+#define Unit1H
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+#include <Vcl.ComCtrls.hpp>
+#include <Vcl.ExtCtrls.hpp>
+#include <Vcl.FileCtrl.hpp>
+#include <Vcl.Grids.hpp>
+//---------------------------------------------------------------------------
+class TEditGRN : public TForm
+{
+__published:	// IDE-managed Components
+	TPageControl *Pager;
+	TTabSheet *SheetTablo;
+	TStringGrid *Grid;
+	TTabSheet *SheetTools;
+	TStringGrid *GridPrice;
+	TFileListBox *FileList;
+	TGroupBox *BoxPrice;
+	TPanel *PanelPrice;
+	TLabel *LabelName;
+	TButton *ButPost;
+	TLabel *LabelGRN;
+	TLabel *LabelKOP;
+	TEdit *EditGRN;
+	TEdit *EditKOP;
+	TPanel *Panel;
+	TGroupBox *BoxPriceT;
+	TGroupBox *BoxWeigh;
+	TButton *ButtonSuma;
+	TLabel *LabelNameT;
+	TLabel *LabelSuma;
+	TLabel *LabelValue;
+	TLabel *LabelGRNT;
+	TLabel *LabelKOPT;
+	TEdit *EditGRNT;
+	TEdit *EditKOPT;
+	TLabel *LabelGRNW;
+	TLabel *LabelKOPTW;
+	TEdit *EditGRNW;
+	TEdit *EditKOPTW;
+	void __fastcall FormActivate(TObject *Sender);
+	void __fastcall GridDrawCell(TObject *Sender, int ACol, int ARow, TRect &Rect, TGridDrawState State);
+
+private:	// User declarations
+public:		// User declarations
+	__fastcall TEditGRN(TComponent* Owner);
+	UnicodeString GetPrise (int row);
+	UnicodeString GetName(UnicodeString FileName);
+	 void FillGridPrice();
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TEditGRN *EditGRN;
+//---------------------------------------------------------------------------
+#endif

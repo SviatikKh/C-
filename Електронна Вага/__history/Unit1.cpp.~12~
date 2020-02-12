@@ -1,0 +1,153 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TEditGRN *EditGRN;
+TPicture *Picture;
+//---------------------------------------------------------------------------
+__fastcall TEditGRN::TEditGRN(TComponent* Owner)
+	: TForm(Owner)
+{
+ GridPrice -> Cells[0][0] = "№";
+ GridPrice -> Cells[1][0] = "Назва";
+ GridPrice -> Cells[2][0] = "Грн.";
+ GridPrice -> Cells[3][0] = "Клп.";
+}
+//Визначення рядку ціни на табло
+UnicodeString TEditGRN::GetPrise (int row)
+{
+	UnicodeString price = "";
+	if (GridPrice ->Cells[2][row] !="")
+	 {
+	   price += GridPrice ->Cells[2][row] + "грн.";
+	 }
+	 if (GridPrice ->Cells[3][row] !="")
+	 {
+	   price += GridPrice ->Cells[3][row] + "коп.";
+	 }
+	 return price;
+}
+//Вилучення назв овочів-фруктів з імен файлів їх фото
+UnicodeString TEditGRN::GetName(UnicodeString FileName)
+{
+ UnicodeString name = FileName;
+ int len = name.Length();
+ name = name.SubString(1, len - 4);
+ return name;
+ }
+ //Заповнення таблиці цін найменуваннями овочів-фруктів (з імен файлів)
+ void TEditGRN::FillGridPrice()
+ {
+  GridPrice ->RowCount = FileList ->Count + 1;
+  for (int i = 0; i < FileList->Count; i++)
+  {
+   GridPrice->Cells[0][i+1] = i+1;
+   GridPrice->Cells[1][i+1] = GetName (FileList ->Items ->Strings[i]);
+  }
+ }
+//Визначення номерів рядків таблиці цін за назвою овочів-фруктів
+int TEditGRN::GetRowPrice(UnicodeString name)
+{
+ int row = 0;
+ for (int i = 1; i < GridPrice->RowCount; i++)
+ {
+	if (GridPrice->Cells[1][i] == name)
+	 {
+	  row = i;
+	  break;
+	}
+ }
+
+
+ return row;
+}
+
+
+
+
+
+
+
+ //Встановлення параметрів інтерфейсу на початку роботи проекту
+void __fastcall TEditGRN::FormActivate(TObject *Sender)
+{
+UnicodeString Folder = ExtractFilePath (Application ->ExeName) +"Фото";
+if (!DirectoryExists (Folder))
+{
+ ShowMessage ("Папка фото відсутня");
+ Close();
+}
+else
+{
+ FileList ->Directory = Folder;
+ if (FileList ->Count < 10)
+ {
+	ShowMessage ("Кількість фото менше 10");
+	Close();
+ }
+ else
+ {
+  Grid ->RowCount = FileList->Count / 10;
+  if (FileList->Count % 10 > 0)
+  {
+	Grid ->RowCount ++;
+  }
+  FillGridPrice();
+ }
+ }
+}
+//---------------------------------------------------------------------------
+//Відображення даних на табло електронної ваги-----------------
+
+void __fastcall TEditGRN::GridDrawCell(TObject *Sender, int ACol, int ARow, TRect &Rect,
+		  TGridDrawState State)
+{
+  //обчислення індекса елемента списку файлів
+  int n = ARow * 10 + ACol;
+  if (n < FileList ->Count)
+  {
+   FileList ->ItemIndex = n;
+   UnicodeString FileName =  ExtractFilePath(Application ->ExeName) +"Фото\\"+
+							 FileList ->Items->Strings [n];
+   UnicodeString name = GetName(FileList->Items->Strings[n]);
+   Picture = new TPicture ();
+   Picture ->LoadFromFile(FileName);
+   Rect = Grid->CellRect(ACol, ARow);
+   Rect.left +=5;
+   Rect.top +=15;
+   Rect.right -=5;
+   Rect.bottom -=15;
+   Grid->Canvas->StretchDraw(Rect, Picture->Graphic);
+   Grid->Canvas->TextOut(Rect.Left, Rect.Top - 12, name);
+  }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TEditGRN::GridSelectCell(TObject *Sender, int ACol, int ARow, bool &CanSelect)
+
+{
+ int n = ARow *10 + ACol;
+ CanSelect = n < FileList->Count;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TEditGRN::GridClick(TObject *Sender)
+{
+int n = Grid->Row * 10 + Grid->Col + 1;
+LabelNameT ->Caption = GridPrice->Cells[1][n];
+EditGRNT ->Text = GridPrice->Cells[2][n];
+EditKOPT ->Text = GridPrice->Cells[3][n];
+}
+//---------------------------------------------------------------------------
+void __fastcall TEditGRN::EditGRNWKeyPress(TObject *Sender, System::WideChar &Key)
+
+{
+ if (Key < '0' || Key > '9') Key = 0;
+}
+//---------------------------------------------------------------------------
+
