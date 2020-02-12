@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2019.07.12 14:00:32.627,=C:\Users\PC\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2019.07.12 14:00:33.548,=C:\Users\PC\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2019.07.12 14:01:56.008,C:\Users\PC\Desktop\slava\Автомат напоїв\Unit1.cpp=C:\Users\PC\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2019.07.12 14:01:56.008,C:\Users\PC\Desktop\slava\Автомат напоїв\Unit1.h=C:\Users\PC\Documents\Embarcadero\Studio\Projects\Unit1.h</Transaction>
+    <Transaction>2019.07.12 14:01:56.008,C:\Users\PC\Desktop\slava\Автомат напоїв\Unit1.dfm=C:\Users\PC\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2019.07.12 14:01:59.097,C:\Users\PC\Desktop\slava\Автомат напоїв\Project1PCH1.h=C:\Users\PC\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2019.07.12 14:02:01.321,C:\Users\PC\Desktop\slava\Автомат напоїв\Project1.cbproj=C:\Users\PC\Documents\Embarcadero\Studio\Projects\Project1.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>

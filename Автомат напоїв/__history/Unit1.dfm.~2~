@@ -1,0 +1,134 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 381
+  ClientWidth = 296
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PanelChoce: TPanel
+    AlignWithMargins = True
+    Left = 3
+    Top = 3
+    Width = 290
+    Height = 375
+    Align = alClient
+    Alignment = taRightJustify
+    AutoSize = True
+    TabOrder = 0
+    ExplicitLeft = 24
+    ExplicitTop = 16
+    ExplicitWidth = 265
+    ExplicitHeight = 337
+    object But1: TBitBtn
+      AlignWithMargins = True
+      Left = 4
+      Top = 4
+      Width = 282
+      Height = 25
+      Align = alTop
+      Caption = #1050#1072#1074#1072' '#1077#1089#1087#1088#1077#1089#1086' - 10 '#1075#1088#1085'.'
+      TabOrder = 0
+      ExplicitLeft = 72
+      ExplicitTop = 16
+      ExplicitWidth = 75
+    end
+    object But2: TBitBtn
+      AlignWithMargins = True
+      Left = 4
+      Top = 35
+      Width = 282
+      Height = 25
+      Align = alTop
+      Caption = #1050#1072#1074#1072' '#1072#1084#1077#1088#1110#1082#1072#1085#1086' - 8 '#1075#1088#1085'.'
+      TabOrder = 1
+      ExplicitLeft = 88
+      ExplicitWidth = 75
+    end
+    object But3: TBitBtn
+      AlignWithMargins = True
+      Left = 4
+      Top = 66
+      Width = 282
+      Height = 25
+      Align = alTop
+      Caption = #1050#1072#1087#1091#1095#1110#1085#1086' '#1075#1086#1088#1110#1093#1086#1074#1077' - 10 '#1075#1088#1085'.'
+      TabOrder = 2
+      ExplicitLeft = 88
+      ExplicitTop = 64
+      ExplicitWidth = 75
+    end
+    object But4: TBitBtn
+      AlignWithMargins = True
+      Left = 4
+      Top = 97
+      Width = 282
+      Height = 25
+      Align = alTop
+      Caption = #1050#1072#1087#1091#1095#1110#1085#1086' '#1089#1084#1077#1090#1072#1085#1082#1086#1074#1077' - 10 '#1075#1088#1085'.'
+      TabOrder = 3
+      ExplicitLeft = 88
+      ExplicitTop = 95
+      ExplicitWidth = 75
+    end
+    object But5: TBitBtn
+      AlignWithMargins = True
+      Left = 4
+      Top = 128
+      Width = 282
+      Height = 25
+      Align = alTop
+      Caption = #1043#1072#1088#1103#1095#1080#1081' '#1096#1086#1082#1086#1083#1072#1076' - 15 '#1075#1088#1085'.'
+      TabOrder = 4
+      ExplicitLeft = 88
+      ExplicitTop = 121
+      ExplicitWidth = 75
+    end
+    object But6: TBitBtn
+      AlignWithMargins = True
+      Left = 4
+      Top = 159
+      Width = 282
+      Height = 25
+      Align = alTop
+      Caption = #1063#1072#1081' '#1095#1086#1088#1085#1080#1081' - 5 '#1075#1088#1085'.'
+      TabOrder = 5
+      ExplicitLeft = 88
+      ExplicitTop = 152
+      ExplicitWidth = 75
+    end
+    object But7: TBitBtn
+      AlignWithMargins = True
+      Left = 4
+      Top = 190
+      Width = 282
+      Height = 25
+      Align = alTop
+      Caption = #1063#1072#1081' '#1079#1077#1083#1077#1085#1080#1081' - 7 '#1075#1088#1085'.'
+      TabOrder = 6
+      ExplicitLeft = 88
+      ExplicitTop = 183
+      ExplicitWidth = 75
+    end
+    object But8: TBitBtn
+      AlignWithMargins = True
+      Left = 4
+      Top = 221
+      Width = 282
+      Height = 25
+      Align = alTop
+      Caption = #1063#1072#1081' '#1079' '#1075#1110#1088#1089#1100#1082#1080#1093' '#1090#1088#1072#1074' - 10 '#1075#1088#1085'.'
+      TabOrder = 7
+      ExplicitLeft = 88
+      ExplicitTop = 214
+      ExplicitWidth = 75
+    end
+  end
+end
