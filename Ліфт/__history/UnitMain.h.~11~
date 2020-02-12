@@ -1,0 +1,52 @@
+//---------------------------------------------------------------------------
+
+#ifndef UnitMainH
+#define UnitMainH
+//---------------------------------------------------------------------------
+#include <System.Classes.hpp>
+#include <Vcl.Controls.hpp>
+#include <Vcl.StdCtrls.hpp>
+#include <Vcl.Forms.hpp>
+#include <Vcl.Grids.hpp>
+#include <Vcl.ExtCtrls.hpp>
+#include <Vcl.Imaging.jpeg.hpp>
+//---------------------------------------------------------------------------
+class TFormMain : public TForm
+{
+__published:	// IDE-managed Components
+	TStringGrid *GridHouse;
+	TPanel *PanelRight;
+	TRadioGroup *GroupFloor;
+	TPanel *PanelLift;
+	TTimer *Timer1;
+	TRadioGroup *GroupLift;
+	TTimer *TimerOpenClose;
+	TPanel *PanelDLeft;
+	TPanel *PanelDRight;
+	TPanel *Panel1;
+	TStringGrid *GridFloor1;
+	TStringGrid *GridFloor4;
+	TStringGrid *GridFloor3;
+	TStringGrid *GridFloor2;
+	TStringGrid *GridFloor5;
+	TImage *Image;
+	TTimer *Timer3;
+	void __fastcall FormActivate(TObject *Sender);
+	void __fastcall GroupFloorClick(TObject *Sender);
+	void __fastcall Timer1Timer(TObject *Sender);
+	void __fastcall TimerOpenCloseTimer(TObject *Sender);
+	void __fastcall GridHouseDrawCell(TObject *Sender, int ACol, int ARow, TRect &Rect,
+          TGridDrawState State);
+	void __fastcall GroupLiftClick(TObject *Sender);
+
+
+private:	// User declarations
+public:		// User declarations
+	__fastcall TFormMain(TComponent* Owner);
+	void PositionLift(int floor);
+	int Floor();
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TFormMain *FormMain;
+//---------------------------------------------------------------------------
+#endif
