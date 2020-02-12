@@ -1,0 +1,15 @@
+# include <conio.h>
+#include <iostream.h>
+
+void main()
+{
+   int vveditSumu = 0;
+   cout<<"Vvedit Sumu: \n";
+   cin>>vveditSumu>>endl;
+
+
+
+getch();
+}
+
+
